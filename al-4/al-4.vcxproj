@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="al-4.h" />
+    <ClInclude Include="Exceptions.h" />
     <ClInclude Include="Q.h" />
   </ItemGroup>
   <ItemGroup>
