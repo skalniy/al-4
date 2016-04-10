@@ -9,5 +9,6 @@ public:
 	unsigned int n;
 
 	friend Q operator* (const Q& lhs, const Q& rhs);
+	friend Q operator+ (const Q& lhs, const Q& rhs);
 };
 
