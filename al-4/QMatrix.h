@@ -21,5 +21,8 @@ public:
 	//Q operator() const (unsigned int i, unsigned int j) { return element[i][j]; }
 	friend istream& operator>>(istream& in, QMatrix& mat);
 	friend ostream& operator<<(ostream& out, const QMatrix& mat);
+	friend QMatrix operator* (const QMatrix& lhs, const QMatrix& rhs);
+	friend QMatrix operator+ (const QMatrix& lhs, const QMatrix& rhs);
+	QMatrix transposition() const;
 };
 

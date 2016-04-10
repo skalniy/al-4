@@ -23,7 +23,6 @@ Q operator+(const Q& lhs, const Q& rhs) {
 
 istream& operator>>(istream& in, Q& q) {
 	unsigned int m, n;
-
 	cin >> m;
 	cin >> n;
 

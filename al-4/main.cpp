@@ -10,15 +10,15 @@ int main() {
 	if (!ist) throw FileNotFound();
 	ofstream ost("out.txt");
 	if (!ost) throw FileNotFound();
+	int m, n;
 
 	cout << "size: ";
-	int m, n;
 	cin >> m >> n;
-
 	QMatrix a = QMatrix(m, n);
 	cin >> a;
 
-	cout << a;
+	QMatrix b = a.transposition();
+	cout << b;
 	
 	ist.close();
 	ost.close();
