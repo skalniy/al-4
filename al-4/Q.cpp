@@ -2,10 +2,10 @@
 
 
 
-Q::Q(int m, unsigned int n) {
+Q::Q(int _m, unsigned int _n) {
 	if (n == 0) throw ZeroDenominatorException();
-	this->m = m;
-	this->n = n;
+	m = _m;
+	n = _n;
 }
 
 
@@ -23,9 +23,10 @@ Q operator+(const Q& lhs, const Q& rhs) {
 
 istream& operator>>(istream& in, Q& q) {
 	unsigned int m, n;
+
 	cin >> m;
 	cin >> n;
-	
+
 	q = Q(m, n);
 
 	return in;

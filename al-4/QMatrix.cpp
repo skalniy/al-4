@@ -7,9 +7,12 @@ QMatrix::QMatrix(unsigned int m, unsigned int n)
 	if ((m == 0) || (n == 0)) throw ZeroSizeOfMatrix();
 	rows = m;
 	columns = n;
-	element = new Q*[rows];
-	for (unsigned int i = 0; i < getRows(); i++)
+	element = new Q*[getRows()];
+	for (unsigned int i = 0; i < getRows(); i++) {
 		element[i] = new Q[getColumns()]();
+		for (unsigned int j = 0; j < getColumns(); j++)
+			element[i][j] = Q();
+	}
 }
 
 
@@ -35,14 +38,11 @@ QMatrix operator* (const QMatrix& lhs, const QMatrix& rhs) {
 
 
 istream& operator>>(istream& in, QMatrix& mat) {
-	unsigned int m, n;
-	cin >> m;
-	cin >> n;
-
-	mat = QMatrix(m, n);
 	for (int i = 0; i < mat.getRows(); i++)
-		for (int j = 0; j < mat.getColumns(); j++)
+		for (int j = 0; j < mat.getColumns(); j++) {
+			cout << "[" << i << "," << j << "]";
 			cin >> mat.element[i][j];
+		}
 
 	return in;
 }
@@ -51,7 +51,7 @@ istream& operator>>(istream& in, QMatrix& mat) {
 ostream& operator<<(ostream& out, const QMatrix& mat) {
 	for (int i = 0; i < mat.getRows(); i++) {
 		for (int j = 0; j < mat.getColumns(); j++)
-			cout << mat.element[i][j];
+			cout << mat.element[i][j] << "\t";
 		cout << endl;
 	}
 

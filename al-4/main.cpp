@@ -11,11 +11,13 @@ int main() {
 	ofstream ost("out.txt");
 	if (!ost) throw FileNotFound();
 
-	Q a, b;
-	ist >> a;
-	cin >> b;
+	cout << "size: ";
+	int m, n;
+	cin >> m >> n;
 
-	ost << b;
+	QMatrix a = QMatrix(m, n);
+	cin >> a;
+
 	cout << a;
 	
 	ist.close();
