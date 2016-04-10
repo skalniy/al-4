@@ -32,3 +32,28 @@ QMatrix operator* (const QMatrix& lhs, const QMatrix& rhs) {
 
 	return result;
 }
+
+
+istream& operator>>(istream& in, QMatrix& mat) {
+	unsigned int m, n;
+	cin >> m;
+	cin >> n;
+
+	mat = QMatrix(m, n);
+	for (int i = 0; i < mat.getRows(); i++)
+		for (int j = 0; j < mat.getColumns(); j++)
+			cin >> mat.element[i][j];
+
+	return in;
+}
+
+
+ostream& operator<<(ostream& out, const QMatrix& mat) {
+	for (int i = 0; i < mat.getRows(); i++) {
+		for (int j = 0; j < mat.getColumns(); j++)
+			cout << mat.element[i][j];
+		cout << endl;
+	}
+
+	return out;
+}

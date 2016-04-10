@@ -2,6 +2,10 @@
 #include "al-4.h"
 
 
+
+using namespace std;
+
+
 class Q
 {
 public:

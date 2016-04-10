@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClInclude Include="al-4.h" />
     <ClInclude Include="Exceptions.h" />
+    <ClInclude Include="main.h" />
     <ClInclude Include="Q.h" />
     <ClInclude Include="QMatrix.h" />
   </ItemGroup>
