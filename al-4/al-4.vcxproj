@@ -22,10 +22,12 @@
     <ClInclude Include="al-4.h" />
     <ClInclude Include="Exceptions.h" />
     <ClInclude Include="Q.h" />
+    <ClInclude Include="QMatrix.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Q.cpp" />
+    <ClCompile Include="QMatrix.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{F35F6AFB-171F-4750-89C9-7029B8B51EC5}</ProjectGuid>
