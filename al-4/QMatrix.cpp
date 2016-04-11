@@ -16,8 +16,14 @@ QMatrix::QMatrix(unsigned int m, unsigned int n)
 }
 
 
+QMatrix::QMatrix(QMatrix&& oth) {
+	*this = move(oth);
+}
+
+
 QMatrix::~QMatrix()
 {
+	if (element == nullptr) return;
 	for (unsigned int i = 0; i < getRows(); i++)
 		delete element[i];
 	delete element;
