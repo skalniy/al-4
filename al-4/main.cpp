@@ -5,7 +5,9 @@
 using namespace std;
 
 
-int main() {
+int main()
+try {
+
 	ifstream ist("in.txt");
 	if (!ist) throw FileNotFound();
 	ofstream ost("out.txt");
@@ -18,10 +20,14 @@ int main() {
 
 	QMatrix b = a.transposition();
 	ost << b;
-	
+
 	ist.close();
 	ost.close();
 
 	system("pause");
 	return 0;
+} 
+catch (...) {
+	cout << "Run-time error. See error stream for details." << endl;
+	return -1;
 }
