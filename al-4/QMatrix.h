@@ -1,4 +1,5 @@
 #pragma once
+#include "Q.h"
 #include "al-4.h"
 
 
@@ -20,7 +21,7 @@ public:
 
 	Q** element;
 
-	//Q operator() const (unsigned int i, unsigned int j) { return element[i][j]; }
+	//Q operator()(unsigned int i, unsigned int j) const { return element[i][j]; }
 
 	QMatrix transposition() const;
 

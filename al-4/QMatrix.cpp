@@ -33,8 +33,8 @@ QMatrix::~QMatrix()
 QMatrix QMatrix::transposition() const {
 	QMatrix result = QMatrix(getColumns(), getRows());
 
-	for (int i = 0; i < getRows(); i++)
-		for (int j = 0; j < getColumns(); j++)
+	for (unsigned int i = 0; i < getRows(); i++)
+		for (unsigned int j = 0; j < getColumns(); j++)
 			result.element[j][i] = element[i][j];
 
 	return result;
@@ -57,8 +57,8 @@ QMatrix operator* (const QMatrix& lhs, const QMatrix& rhs) {
 QMatrix operator+ (const QMatrix& lhs, const QMatrix& rhs) {
 	QMatrix result = QMatrix(lhs.getRows(), rhs.getColumns());
 
-	for (int i = 0; i < result.getRows(); i++)
-		for (int j = 0; j < result.getColumns(); j++)
+	for (unsigned int i = 0; i < result.getRows(); i++)
+		for (unsigned int j = 0; j < result.getColumns(); j++)
 			result.element[i][j] = lhs.element[i][j] + rhs.element[i][j];
 
 	return result;
@@ -66,8 +66,8 @@ QMatrix operator+ (const QMatrix& lhs, const QMatrix& rhs) {
 
 
 istream& operator>>(istream& ins, QMatrix& mat) {
-	for (int i = 0; i < mat.getRows(); i++)
-		for (int j = 0; j < mat.getColumns(); j++) {
+	for (unsigned int i = 0; i < mat.getRows(); i++)
+		for (unsigned int j = 0; j < mat.getColumns(); j++) {
 			ins >> mat.element[i][j];
 		}
 
@@ -77,8 +77,8 @@ istream& operator>>(istream& ins, QMatrix& mat) {
 
 ostream& operator<<(ostream& out, const QMatrix& mat) {
 	out << mat.getRows() << " " << mat.getColumns() << endl;
-	for (int i = 0; i < mat.getRows(); i++) {
-		for (int j = 0; j < mat.getColumns(); j++)
+	for (unsigned int i = 0; i < mat.getRows(); i++) {
+		for (unsigned int j = 0; j < mat.getColumns(); j++)
 			out << mat.element[i][j] << "\t";
 		out << endl;
 	}
