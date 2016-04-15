@@ -21,19 +21,21 @@ Q operator+(const Q& lhs, const Q& rhs) {
 }
 
 
-istream& operator>>(istream& in, Q& q) {
+istream& operator>>(istream& ins, Q& q) {
 	unsigned int m, n;
-	cin >> m;
-	cin >> n;
+	char frac;
+	ins >> m;
+	ins >> frac;
+	ins >> n;
 
 	q = Q(m, n);
 
-	return in;
+	return ins;
 }
 
 
 ostream& operator<<(ostream& out, const Q& q) {
-	cout << q.m << "/" << q.n << " ";
+	out << q.m << "/" << q.n << " ";
 
 	return out;
 }

@@ -65,22 +65,22 @@ QMatrix operator+ (const QMatrix& lhs, const QMatrix& rhs) {
 }
 
 
-istream& operator>>(istream& in, QMatrix& mat) {
+istream& operator>>(istream& ins, QMatrix& mat) {
 	for (int i = 0; i < mat.getRows(); i++)
 		for (int j = 0; j < mat.getColumns(); j++) {
-			cout << "[" << i << "," << j << "]";
-			cin >> mat.element[i][j];
+			ins >> mat.element[i][j];
 		}
 
-	return in;
+	return ins;
 }
 
 
 ostream& operator<<(ostream& out, const QMatrix& mat) {
+	out << mat.getRows() << " " << mat.getColumns() << endl;
 	for (int i = 0; i < mat.getRows(); i++) {
 		for (int j = 0; j < mat.getColumns(); j++)
-			cout << mat.element[i][j] << "\t";
-		cout << endl;
+			out << mat.element[i][j] << "\t";
+		out << endl;
 	}
 
 	return out;

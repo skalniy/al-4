@@ -12,13 +12,12 @@ int main() {
 	if (!ost) throw FileNotFound();
 	int m, n;
 
-	cout << "size: ";
-	cin >> m >> n;
+	ist >> m >> n;
 	QMatrix a = QMatrix(m, n);
-	cin >> a;
+	ist >> a;
 
 	QMatrix b = a.transposition();
-	cout << b;
+	ost << b;
 	
 	ist.close();
 	ost.close();
