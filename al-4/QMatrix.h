@@ -21,7 +21,7 @@ public:
 
 	Q** element;
 
-	//Q operator()(unsigned int i, unsigned int j) const { return element[i][j]; }
+	Q& operator()(unsigned int i, unsigned int j) const;
 
 	QMatrix transposition() const;
 

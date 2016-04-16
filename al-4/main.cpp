@@ -18,7 +18,11 @@ try {
 	QMatrix a = QMatrix(m, n);
 	ist >> a;
 
-	QMatrix b = a.transposition();
+	ist >> m >> n;
+	QMatrix c = QMatrix(m, n);
+	ist >> c;
+
+	QMatrix b = a + c;
 	ost << b;
 
 	ist.close();

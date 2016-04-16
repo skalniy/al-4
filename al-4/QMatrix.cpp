@@ -59,7 +59,7 @@ QMatrix operator+ (const QMatrix& lhs, const QMatrix& rhs) {
 
 	for (unsigned int i = 0; i < result.getRows(); i++)
 		for (unsigned int j = 0; j < result.getColumns(); j++)
-			result.element[i][j] = lhs.element[i][j] + rhs.element[i][j];
+			result(i, j) = lhs(i, j) + rhs(i, j);
 
 	return result;
 }
@@ -79,9 +79,12 @@ ostream& operator<<(ostream& out, const QMatrix& mat) {
 	out << mat.getRows() << " " << mat.getColumns() << endl;
 	for (unsigned int i = 0; i < mat.getRows(); i++) {
 		for (unsigned int j = 0; j < mat.getColumns(); j++)
-			out << mat.element[i][j] << "\t";
+			out << mat(i, j) << "\t";
 		out << endl;
 	}
 
 	return out;
 }
+
+
+Q& QMatrix::operator()(unsigned int i, unsigned int j) const { return element[i][j]; }
