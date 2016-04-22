@@ -16,12 +16,13 @@ public:
 	QMatrix(QMatrix&& oth);
 
 
-	unsigned int getRows (void) const { return rows; }
-	unsigned int getColumns(void) const { return columns; }
+	unsigned int getRows (void) const { return rows; } // честно говоря, get в названии метода не слишком и нужен.
+	unsigned int getColumns(void) const { return columns; } // Метод columns() был бы неплох, нет?
 
-	Q** element;
+	Q** element; // public?
 
-	Q& operator()(unsigned int i, unsigned int j) const;
+	Q& operator()(unsigned int i, unsigned int j) const; // const operator, имхо, лучше бы возвращал const reference
+	// можно сделать еще неконстантный, вот он вернет неконстантную ссылку
 
 	QMatrix transposition() const;
 

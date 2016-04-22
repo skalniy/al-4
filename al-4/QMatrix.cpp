@@ -7,7 +7,7 @@ QMatrix::QMatrix(unsigned int m, unsigned int n)
 	if ((m == 0) || (n == 0)) throw ZeroSizeOfMatrix();
 	rows = m;
 	columns = n;
-	element = new Q*[getRows()];
+	element = new Q*[getRows()]; // поля m и n спокойно можно использовать внутри своих же методов
 	for (unsigned int i = 0; i < getRows(); i++) {
 		element[i] = new Q[getColumns()]();
 		for (unsigned int j = 0; j < getColumns(); j++)
@@ -17,7 +17,8 @@ QMatrix::QMatrix(unsigned int m, unsigned int n)
 
 
 QMatrix::QMatrix(QMatrix&& oth) {
-	*this = move(oth);
+	*this = move(oth); // тут move лишний: тип oth и так QMatrix&&
+	// T&& move<T>(T& a) только делает return static_cast<T&&>(a);
 }
 
 
@@ -31,7 +32,7 @@ QMatrix::~QMatrix()
 
 
 QMatrix QMatrix::transposition() const {
-	QMatrix result = QMatrix(getColumns(), getRows());
+	QMatrix result = QMatrix(getColumns(), getRows()); // m, n
 
 	for (unsigned int i = 0; i < getRows(); i++)
 		for (unsigned int j = 0; j < getColumns(); j++)
