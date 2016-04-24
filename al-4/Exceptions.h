@@ -5,7 +5,8 @@ using namespace std;
 class ZeroDenominatorException {
 public:
 	ZeroDenominatorException() {
-		std::cerr << "Zero denominator in rational number." << endl;
+		std::cerr << "Zero denominator in rational number." << endl; // стоит оставить ответственность за вывод вызывающему коду
+		// Предлагаю возвращать строку в методе what()
 	}
 };
 
