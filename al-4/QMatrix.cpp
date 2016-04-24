@@ -36,7 +36,7 @@ QMatrix QMatrix::transposition() const {
 
 	for (unsigned int i = 0; i < rows_count(); i++)
 		for (unsigned int j = 0; j < columns_count(); j++)
-			result.element[j][i] = element[i][j];
+			result(j, i) = element[i][j];
 
 	return result;
 }
@@ -49,7 +49,7 @@ QMatrix operator* (const QMatrix& lhs, const QMatrix& rhs) {
 	for (unsigned int i = 0; i < lhs.rows_count(); i++)
 		for (unsigned int j = 0; j < rhs.columns_count(); j++)
 			for (unsigned int k = 0; k < lhs.columns_count(); k++)
-				result.element[i][j] = result.element[i][j] + lhs.element[i][k] * rhs.element[k][j];
+				result(i, j) = result(i, j) + lhs(i, k) * rhs(k, j);
 
 	return result;
 }
@@ -69,7 +69,7 @@ QMatrix operator+ (const QMatrix& lhs, const QMatrix& rhs) {
 istream& operator>>(istream& ins, QMatrix& mat) {
 	for (unsigned int i = 0; i < mat.rows_count(); i++)
 		for (unsigned int j = 0; j < mat.columns_count(); j++) {
-			ins >> mat.element[i][j];
+			ins >> mat(i, j);
 		}
 
 	return ins;
