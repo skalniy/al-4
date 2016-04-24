@@ -31,7 +31,7 @@ try {
 	system("pause");
 	return 0;
 } 
-catch (...) {
-	cout << "Run-time error. See error stream for details." << endl;
+catch (exception& e) {
+	cout << "exception caught: " << e.what() << endl;
 	return -1;
 }

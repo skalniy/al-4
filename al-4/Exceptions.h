@@ -2,34 +2,25 @@
 #include "al-4.h"
 using namespace std;
 
-class ZeroDenominatorException {
+class ZeroDenominatorException : runtime_error {
 public:
-	ZeroDenominatorException() {
-		std::cerr << "Zero denominator in rational number." << endl; // стоит оставить ответственность за вывод вызывающему коду
-		// Предлагаю возвращать строку в методе what()
-	}
+	ZeroDenominatorException() : runtime_error("Zero denominator in rational number.") {}
 };
 
 
-class ZeroSizeOfMatrix {
+class ZeroSizeOfMatrix : runtime_error {
 public:
-	ZeroSizeOfMatrix() {
-		std::cerr << "Zero size of matrix." << endl;
-	}
+	ZeroSizeOfMatrix() : runtime_error("Zero size of matrix.") {}
 };
 
 
-class BadSizeOfMatrix {
+class BadSizeOfMatrix : runtime_error {
 public:
-	BadSizeOfMatrix() {
-		std::cerr << "Bad size of matrix." << endl;
-	}
+	BadSizeOfMatrix() : runtime_error("Bad size of matrix.") {}
 };
 
 
-class FileNotFound {
+class FileNotFound : runtime_error {
 public:
-	FileNotFound() {
-		std::cerr << "File not found." << endl;
-	}
+	FileNotFound() : runtime_error("File not found.") {}
 };
