@@ -5,7 +5,7 @@
 using namespace std;
 
 
-int main() {
+int main()
 	try {
 
 		ifstream ist("in.txt");
@@ -29,11 +29,10 @@ int main() {
 		ost.close();
 
 		system("pause");
+		return 0;
 		
 	}
 	catch (exception& e) {
 		cout << "exception caught: " << e.what() << endl;
 		return -1;
 	}
-	return 0;
-}

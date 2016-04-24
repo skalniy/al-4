@@ -2,25 +2,25 @@
 #include "al-4.h"
 using namespace std;
 
-class ZeroDenominatorException : exception {
+class ZeroDenominatorException : public runtime_error {
 public:
-	ZeroDenominatorException() : exception("Zero denominator in rational number.") {}
+	ZeroDenominatorException() : runtime_error("Zero denominator in rational number.") {}
 };
 
 
-class ZeroSizeOfMatrix : runtime_error {
+class ZeroSizeOfMatrix : public runtime_error {
 public:
 	ZeroSizeOfMatrix() : runtime_error("Zero size of matrix.") {}
 };
 
 
-class BadSizeOfMatrix : runtime_error {
+class BadSizeOfMatrix : public runtime_error {
 public:
 	BadSizeOfMatrix() : runtime_error("Bad size of matrix.") {}
 };
 
 
-class FileNotFound : runtime_error {
+class FileNotFound : public runtime_error {
 public:
 	FileNotFound() : runtime_error("File not found.") {}
 };

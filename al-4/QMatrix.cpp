@@ -56,6 +56,9 @@ QMatrix operator* (const QMatrix& lhs, const QMatrix& rhs) {
 
 
 QMatrix operator+ (const QMatrix& lhs, const QMatrix& rhs) {
+	if ((lhs.columns_count() != rhs.columns_count())
+		|| (lhs.rows_count() != rhs.rows_count()))
+		throw BadSizeOfMatrix();
 	QMatrix result = QMatrix(lhs.rows_count(), rhs.columns_count());
 
 	for (unsigned int i = 0; i < result.rows_count(); i++)
