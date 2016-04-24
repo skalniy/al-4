@@ -7,7 +7,7 @@ QMatrix::QMatrix(unsigned int m, unsigned int n)
 	if ((m == 0) || (n == 0)) throw ZeroSizeOfMatrix();
 	rows = m;
 	columns = n;
-	element = new Q*[rows]; // поля m и n спокойно можно использовать внутри своих же методов
+	element = new Q*[rows];
 	for (unsigned int i = 0; i < rows; i++) {
 		element[i] = new Q[columns]();
 		for (unsigned int j = 0; j < columns; j++)
