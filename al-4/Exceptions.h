@@ -2,9 +2,9 @@
 #include "al-4.h"
 using namespace std;
 
-class ZeroDenominatorException : runtime_error {
+class ZeroDenominatorException : exception {
 public:
-	ZeroDenominatorException() : runtime_error("Zero denominator in rational number.") {}
+	ZeroDenominatorException() : exception("Zero denominator in rational number.") {}
 };
 
 

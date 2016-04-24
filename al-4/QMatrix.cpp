@@ -88,4 +88,5 @@ ostream& operator<<(ostream& out, const QMatrix& mat) {
 }
 
 
-Q& QMatrix::operator()(unsigned int i, unsigned int j) const { return element[i][j]; }
+Q& const QMatrix::operator()(unsigned int i, unsigned int j) const { return element[i][j]; }
+Q& QMatrix::operator()(unsigned int i, unsigned int j) { return element[i][j]; }
