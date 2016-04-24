@@ -16,8 +16,8 @@ public:
 	QMatrix(QMatrix&& oth);
 
 
-	unsigned int getRows (void) const { return rows; } // честно говоря, get в названии метода не слишком и нужен.
-	unsigned int getColumns(void) const { return columns; } // Метод columns() был бы неплох, нет?
+	unsigned int rows_count (void) const { return rows; } // честно говоря, get в названии метода не слишком и нужен.
+	unsigned int columns_count(void) const { return columns; } // Метод columns() был бы неплох, нет?
 
 	Q** element; // public?
 
@@ -27,8 +27,8 @@ public:
 	QMatrix transposition() const;
 
 	QMatrix& operator=(QMatrix&& oth) {
-		rows = oth.getRows();
-		columns = oth.getColumns();
+		rows = oth.rows_count();
+		columns = oth.columns_count();
 		element = oth.element;
 
 		oth.element = nullptr;
