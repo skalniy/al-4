@@ -3,8 +3,7 @@
 
 
 Q::Q(int _m, unsigned int _n) {
-	// стоило бы сначала инициализировать n
-	if (n == 0) throw ZeroDenominatorException(); // bug! bug!
+	if (_n == 0) throw ZeroDenominatorException();
 	m = _m;
 	n = _n;
 }
