@@ -8,11 +8,12 @@ using namespace std;
 
 class Q
 {
+private:
+	int m;
+	unsigned int n;
+
 public:
 	Q(int m = 0, unsigned int n = 1);
-
-	int m; // public?
-	unsigned int n;
 
 	friend Q operator*(const Q& lhs, const Q& rhs);
 	friend Q operator+(const Q& lhs, const Q& rhs);
